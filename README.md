@@ -1,1 +1,1 @@
-# sjsu-tt-app
+# delta-app
