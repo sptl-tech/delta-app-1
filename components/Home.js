@@ -1,4 +1,5 @@
 import React from 'react';
+import './component.css';
 import { StyleSheet, Text, View, Image, Button } from 'react-native';
 import logo from '../images/tt_logo.png';
 export default class Home extends React.Component {
@@ -7,7 +8,7 @@ export default class Home extends React.Component {
             <View style={styles.container}>
             <Image style={styles.image} source = {logo} />
             <Text>{'\n'}</Text>
-            <Text>TT App</Text>
+            <Text class= 'homepageText' >TT App</Text>
             <Text>{'\n'}</Text>
             <Button title = "Get Started" />
             </View>
