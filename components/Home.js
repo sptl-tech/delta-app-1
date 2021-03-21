@@ -7,7 +7,7 @@ export default class Home extends React.Component {
             <View style={styles.container}>
             <Image style={styles.image} source = {logo} />
             <Text>{'\n'}</Text>
-            <Text>TT App</Text>
+            <Text>TT App cool</Text>
             <Text>{'\n'}</Text>
             <Button title = "Get Started" />
             </View>
