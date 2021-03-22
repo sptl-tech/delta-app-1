@@ -7,9 +7,10 @@ export default class Home extends React.Component {
             <View style={styles.container}>
             <Image style={styles.image} source = {logo} />
             <Text>{'\n'}</Text>
-            <Text>TT App cool</Text>
+            <Text style={styles.TTLED}>TT LED</Text>
+            <Text style={styles.openMotto}>"Whatsoever thy hand findeth to do, do it with thy might;..."--Ecclesiastes 9:10</Text>
             <Text>{'\n'}</Text>
-            <Button title = "Get Started" />
+            <Button color = "red" title = "Get Started" />
             </View>
         )
     
@@ -18,14 +19,24 @@ export default class Home extends React.Component {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: '#303030',
       alignItems: 'center',
       justifyContent: 'center',
     },
     image: {
-        width: 400,
-        height: 400,
+        width: 200,
+        height: 200,
         resizeMode: 'contain',
+    },
+    TTLED: {
+        color: "white",
+        fontSize: 70,
+        fontFamily: "Times New Roman",
+    },
+    openMotto: {
+        color: "white",
+        padding: 70,
+        fontFamily: "Georgia"
     }
 
 });
