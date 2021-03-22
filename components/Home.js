@@ -10,7 +10,7 @@ export default class Home extends React.Component {
             <Text style={styles.TTLED}>TT LED</Text>
             <Text style={styles.openMotto}>"Whatsoever thy hand findeth to do, do it with thy might;..."--Ecclesiastes 9:10</Text>
             <Text>{'\n'}</Text>
-            <Button color = "maroon" title = "Get Started" />
+            <Button color = "red" title = "Get Started" />
             </View>
         )
     
