@@ -13,7 +13,6 @@ export default class Home extends React.Component {
             <Button color = "red" title = "Get Started" />
             </View>
         )
-    
 }}
 
 const styles = StyleSheet.create({
