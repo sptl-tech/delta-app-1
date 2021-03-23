@@ -7,7 +7,7 @@ export default class Home extends React.Component {
             <View style={styles.container}>
             <Image style={styles.image} source = {logo} />
             <Text>{'\n'}</Text>
-            <Text style={styles.TTLED}>TT App</Text>
+            <Text style={styles.TTLED}>TT LED</Text>
             <Text style={styles.openMotto}>"Whatsoever thy hand findeth to do, do it with thy might;..."--Ecclesiastes 9:10</Text>
             <Text>{'\n'}</Text>
             <Button color = "red" title = "Get Started" />
