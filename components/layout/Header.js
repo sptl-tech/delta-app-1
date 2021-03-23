@@ -22,11 +22,12 @@ export default function Header() {
 
 const styles = StyleSheet.create({
   header: {
+    flex: 1,
     position: 'absolute',
-    top:0,
-    left:0,
-    right:0,
-    height:45,
+    height: 69,
+    left: 0,
+    right: 0,
+    top: 45,
     backgroundColor: 'maroon',
     alignItems: 'center',
     flexDirection:'row',

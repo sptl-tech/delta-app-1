@@ -7,6 +7,8 @@ export default class Home extends React.Component {
         return(
             <View style={styles.container}>
             <Header />
+            <Text>{'\n'}</Text>
+            <Text>{'\n'}</Text>
             <Image style={styles.image} source = {logo} />
             <Text>{'\n'}</Text>
             <Text style={styles.TTLED}>TT LED</Text>
