@@ -1,13 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, Button } from 'react-native';
 import logo from '../images/tt_logo.png';
+import Header from './layout/Header'
 export default class Home extends React.Component {
     render(){
         return(
             <View style={styles.container}>
+            <Header />
             <Image style={styles.image} source = {logo} />
             <Text>{'\n'}</Text>
-            <Text style={styles.TTLED}>TT App</Text>
+            <Text style={styles.TTLED}>TT LED</Text>
             <Text style={styles.openMotto}>"Whatsoever thy hand findeth to do, do it with thy might;..."--Ecclesiastes 9:10</Text>
             <Text>{'\n'}</Text>
             <Button color = "red" title = "Get Started" />
