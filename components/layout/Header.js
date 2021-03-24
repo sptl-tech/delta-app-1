@@ -1,11 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import {MaterialIcons} from '@expo/vector-icons'
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 export default function Header() {
 
   const openMenu = () =>{
-    //implement 
+     
   }
    
   return (
@@ -28,7 +30,9 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     top: 45,
-    backgroundColor: 'maroon',
+    borderBottomColor:'#fff',
+    borderBottomWidth: 3,
+    backgroundColor: 'transparent',
     alignItems: 'center',
     flexDirection:'row',
     justifyContent: 'center',
@@ -41,6 +45,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     position: 'absolute',
-    left: 16
+    left: 16,
+    color: '#fff'
   }
 })

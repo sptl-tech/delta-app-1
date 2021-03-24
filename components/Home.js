@@ -2,11 +2,12 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, Button } from 'react-native';
 import logo from '../images/tt_logo.png';
 import Header from './layout/Header'
-export default class Home extends React.Component {
-    render(){
+
+export default function Home ({navigation}) {
+    
+    
         return(
             <View style={styles.container}>
-            <Header />
             <Text>{'\n'}</Text>
             <Text>{'\n'}</Text>
             <Image style={styles.image} source = {logo} />
@@ -14,10 +15,10 @@ export default class Home extends React.Component {
             <Text style={styles.TTLED}>TT LED</Text>
             <Text style={styles.openMotto}>"Whatsoever thy hand findeth to do, do it with thy might;..."--Ecclesiastes 9:10</Text>
             <Text>{'\n'}</Text>
-            <Button color = "red" title = "Get Started" />
+            <Button color = "red" title = "Get Started" onPress = {() => navigation.navigate('NavScreen')}/>
             </View>
         )
-}}
+}
 
 const styles = StyleSheet.create({
     container: {
