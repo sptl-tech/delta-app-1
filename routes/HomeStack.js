@@ -5,7 +5,6 @@ import NavScreen from '../components/Navigation';
 import Home from '../components/Home';
 import Bluetooth from '../components/BluetoothPage';
 import Timer from '../components/Timer';
-import logo from '../images/tt_logo.png';
 
 const Stack = createStackNavigator(); 
 
@@ -31,7 +30,7 @@ export default function HomeStack (){
             options = {{
                 title: 'Navigation',
                 headerStyle: {
-                    backgroundColor: '#303030'
+                    backgroundColor: '#303030',
                 },
                 headerTintColor: '#fff',
                 headerTitleStyle: {
