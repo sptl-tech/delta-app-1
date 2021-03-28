@@ -11,7 +11,7 @@ export default function Home ({navigation}) {
             <Text>{'\n'}</Text>
             <Text style={styles.TTLED}>Nav Screen Brah</Text>
             <Text>{'\n'}</Text>
-            <Button color = "red" title = "Bluetooth" onPress = {() => navigation.navigate('Bluetooth')}/>
+            <Button style = {styles.button} color = "red" title = "Bluetooth" onPress = {() => navigation.navigate('Bluetooth')}/>
             <Text>{'\n'}</Text>
             <Button color = "red" title = "Timer" onPress = {() => navigation.navigate('Timer')}/>
             </View>
@@ -34,6 +34,10 @@ const styles = StyleSheet.create({
         color: "white",
         fontSize: 70,
         fontFamily: "Times New Roman",
+    },
+    button: {
+        borderBottomWidth: 10, 
+        borderBottomColor: 'white'
     },
     openMotto: {
         color: "white",

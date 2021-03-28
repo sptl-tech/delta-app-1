@@ -37,6 +37,7 @@ export default function HomeStack (){
                 headerTitleStyle: {
                 fontWeight: 'bold',
                 alignSelf: 'center',
+                
           },
             }}/>
             <Stack.Screen name = "Bluetooth" component={Bluetooth} 
