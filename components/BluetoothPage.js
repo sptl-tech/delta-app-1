@@ -12,7 +12,7 @@ export default class Home extends React.Component {
             <Text>{'\n'}</Text>
             <Text style={styles.TTLED}>Bluetooth</Text>
             <Text>{'\n'}</Text>
-            <Button color = "red" title = "Get Started" />
+            <Button color = "#8B0000" title = "Get Started" />
             </View>
         )
 }}
