@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
         color: "white",
         padding: 70,
         fontFamily: "Georgia"
+    },
     button: {
         position: 'absolute',
         top: 100,
