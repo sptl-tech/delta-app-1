@@ -1,10 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Button,TextInput } from 'react-native';
+import { StyleSheet, Text, View, Image, Button,TextInput, KeyboardAvoidingView } from 'react-native';
 import logo from '../images/tt_logo.png';
 export default class BluetoothPage extends React.Component {
     render(){
         return(
-            <View style={styles.container}>
+            <KeyboardAvoidingView
+             style={styles.container}
+             behavior = "padding">
                 <Text style = {styles.base}>
                     Enter a word:
                 </Text>
@@ -17,7 +19,7 @@ export default class BluetoothPage extends React.Component {
                 <Button color = 'white' title = "Change display" />
                 <Button color = 'white' title = "Clear board" />
             </View>
-            </View>
+            </KeyboardAvoidingView>
         ) 
     
 }}
