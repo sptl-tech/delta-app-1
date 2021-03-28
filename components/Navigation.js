@@ -14,6 +14,8 @@ export default function Home ({navigation}) {
             <Button style = {styles.button} color = "red" title = "Bluetooth" onPress = {() => navigation.navigate('Bluetooth')}/>
             <Text>{'\n'}</Text>
             <Button color = "red" title = "Timer" onPress = {() => navigation.navigate('Timer')}/>
+            <Button style = {styles.button} color = "red" title = "LED Display" onPress = {() => navigation.navigate('Bluetooth')}/>
+            <Button style = {styles.button} color = "red" title = "Timer" onPress = {() => navigation.navigate('Timer')}/>
             </View>
         )
 }
@@ -43,6 +45,9 @@ const styles = StyleSheet.create({
         color: "white",
         padding: 70,
         fontFamily: "Georgia"
+    button: {
+        position: 'absolute',
+        top: 100,
     }
 
 });
