@@ -15,9 +15,17 @@ export default class BluetoothPage extends React.Component {
                     placeholder = 'e.g. Hello'
                     placeholderTextColor = 'white'
                 />
+                <Text>{'\n'}</Text>
+
+  
             <View style={styles.buttons}>
-                <Button color = 'white' title = "Change display" />
-                <Button color = 'white' title = "Clear board" />
+                <View style = {styles.clearButton}>
+                    <Button color = 'gray' title = "Clear board" />
+                </View>
+                <View style = {styles.changeButton}>
+                    <Button color = 'gray' title = "Change display" />
+                </View>
+                
             </View>
             </KeyboardAvoidingView>
         ) 
@@ -30,13 +38,23 @@ const styles = StyleSheet.create({
       backgroundColor: '#000000',
       alignItems: 'center',
       justifyContent: 'center',
+      
     },
     buttons: {
+        flex: 2,
         flexDirection:'row',
-        backgroundColor: '#dc143c',
-        
-        
+        backgroundColor: 'black',
+        justifyContent: 'space-between',
     },
+    changeButton: {
+        flex:1,
+        marginLeft: 5
+    },
+    clearButton: {
+        flex: 1, 
+        marginRight:5
+    },
+   
     input:{
         borderWidth: 1,
         borderColor: '#ffffff',

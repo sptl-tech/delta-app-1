@@ -14,7 +14,8 @@ export default function HomeStack (){
         <Stack.Navigator initialRouteName = "Home">
             <Stack.Screen name = "Home" component={Home} 
             options = {{
-                title: 'Home',
+                title: '',
+
                 headerStyle: {
                     backgroundColor: '#303030'
                 },
@@ -29,12 +30,13 @@ export default function HomeStack (){
             options = {{
                 title: 'Navigation',
                 headerStyle: {
-                    backgroundColor: '#303030'
+                    backgroundColor: '#303030',
                 },
                 headerTintColor: '#fff',
                 headerTitleStyle: {
                 fontWeight: 'bold',
                 alignSelf: 'center',
+                
           },
             }}/>
             <Stack.Screen name = "Bluetooth" component={Bluetooth} 

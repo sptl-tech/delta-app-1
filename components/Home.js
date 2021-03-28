@@ -40,7 +40,8 @@ const styles = StyleSheet.create({
     openMotto: {
         color: "white",
         padding: 70,
-        fontFamily: "Georgia"
+        fontFamily: "Georgia",
     }
+
 
 });
