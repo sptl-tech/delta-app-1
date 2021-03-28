@@ -7,8 +7,11 @@ export default function Home ({navigation}) {
 
         return(
             <View style={styles.container}>
-            <Button style = {styles.button} color = "red" title = "LED Display" onPress = {() => navigation.navigate('Bluetooth')}/>
-            <Button style = {styles.button} color = "red" title = "Timer" onPress = {() => navigation.navigate('Timer')}/>
+                <Image style={styles.image} source = {logo} />
+                <Button style = {styles.button} color = "red" title = "LED Display" onPress = {() => navigation.navigate('Bluetooth')}/>
+                <Text>{'\n'}</Text>
+                <Text>{'\n'}</Text>
+                <Button style = {styles.button} color = "red" title = "Timer" onPress = {() => navigation.navigate('Timer')}/>
             </View>
         )
 }
@@ -21,8 +24,10 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
     },
     image: {
-        width: 200,
-        height: 200,
+        position: 'absolute',
+        top: 50,
+        width: 150,
+        height: 150,
         resizeMode: 'contain',
     },
     button: {
