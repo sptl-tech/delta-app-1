@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, Button } from 'react-native';
 import logo from '../images/tt_logo.png';
 import Header from './layout/Header'
-export default class Home extends React.Component {
+export default class BluetoothPage extends React.Component {
     render(){
         return(
             <View style={styles.container}>

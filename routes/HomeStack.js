@@ -5,6 +5,7 @@ import NavScreen from '../components/Navigation';
 import Home from '../components/Home';
 import Bluetooth from '../components/BluetoothPage';
 import Timer from '../components/Timer';
+import logo from '../images/tt_logo.png';
 
 const Stack = createStackNavigator(); 
 
@@ -14,7 +15,8 @@ export default function HomeStack (){
         <Stack.Navigator initialRouteName = "Home">
             <Stack.Screen name = "Home" component={Home} 
             options = {{
-                title: 'Home',
+                title: '',
+
                 headerStyle: {
                     backgroundColor: '#303030'
                 },
