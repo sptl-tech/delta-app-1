@@ -7,8 +7,11 @@ export default function Home ({navigation}) {
 
         return(
             <View style={styles.container}>
-            <Button style = {styles.button} color = "red" title = "LED Display" onPress = {() => navigation.navigate('Bluetooth')}/>
-            <Button style = {styles.button} color = "red" title = "Timer" onPress = {() => navigation.navigate('Timer')}/>
+            <View style={{ borderBottomColor: '#FFFFFF', borderBottomWidth: 2, width: '100%' }} />
+            <Button color = "red" title = "LED Display" onPress = {() => navigation.navigate('Bluetooth')}/>
+            <View style={{ borderBottomColor: '#FFFFFF', borderBottomWidth: 2, width: '100%' }} />
+            <Button color = "red" title = "Timer" onPress = {() => navigation.navigate('Timer')}/>
+            <View style={{ borderBottomColor: '#FFFFFF', borderBottomWidth: 2, width: '100%' }} />
             </View>
         )
 }
@@ -25,9 +28,5 @@ const styles = StyleSheet.create({
         height: 200,
         resizeMode: 'contain',
     },
-    button: {
-        position: 'absolute',
-        top: 100,
-    }
 
 });
