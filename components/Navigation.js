@@ -6,12 +6,14 @@ import Header from './layout/Header'
 export default function Home ({navigation}) {
 
         return(
+            
             <View style={styles.container}>
                 <Image style={styles.image} source = {logo} />
-                <Button style = {styles.button} color = "red" title = "LED Display" onPress = {() => navigation.navigate('Bluetooth')}/>
-                <Text>{'\n'}</Text>
-                <Text>{'\n'}</Text>
-                <Button style = {styles.button} color = "red" title = "Timer" onPress = {() => navigation.navigate('Timer')}/>
+            <View style={{ borderBottomColor: '#FFFFFF', borderBottomWidth: 2, width: '100%' }} />
+            <Button color = "red" title = "LED Display" onPress = {() => navigation.navigate('Bluetooth')}/>
+            <View style={{ borderBottomColor: '#FFFFFF', borderBottomWidth: 2, width: '100%' }} />
+            <Button color = "red" title = "Timer" onPress = {() => navigation.navigate('Timer')}/>
+            <View style={{ borderBottomColor: '#FFFFFF', borderBottomWidth: 2, width: '100%' }} />
             </View>
         )
 }
@@ -30,9 +32,5 @@ const styles = StyleSheet.create({
         height: 150,
         resizeMode: 'contain',
     },
-    button: {
-        position: 'absolute',
-        top: 100,
-    }
 
 });
