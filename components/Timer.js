@@ -9,7 +9,7 @@ export default function Home ({navigation}) {
             <View style={styles.container}>
             <Text>{'\n'}</Text>
             <Text>{'\n'}</Text>
-            <Text style={styles.TTLED}>Timeer</Text>
+            <Text style={styles.TTLED}>Timer</Text>
             <Text>{'\n'}</Text>
             </View>
         )
