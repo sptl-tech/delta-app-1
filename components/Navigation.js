@@ -6,9 +6,7 @@ import Header from './layout/Header'
 export default function Home ({navigation}) {
 
         return(
-            
             <View style={styles.container}>
-                <Image style={styles.image} source = {logo} />
             <View style={{ borderBottomColor: '#FFFFFF', borderBottomWidth: 2, width: '100%' }} />
             <Button color = "red" title = "LED Display" onPress = {() => navigation.navigate('Bluetooth')}/>
             <View style={{ borderBottomColor: '#FFFFFF', borderBottomWidth: 2, width: '100%' }} />
@@ -26,10 +24,8 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
     },
     image: {
-        position: 'absolute',
-        top: 50,
-        width: 150,
-        height: 150,
+        width: 200,
+        height: 200,
         resizeMode: 'contain',
     },
 
