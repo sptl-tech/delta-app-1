@@ -1,9 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, Button } from 'react-native';
-import logo from '../images/tt_logo.png';
 import Header from './layout/Header'
 
-export default function Home ({navigation}) {
+export default function NavScreen ({navigation}) {
 
         return(
             <View style={styles.container}>
