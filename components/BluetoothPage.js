@@ -1,7 +1,66 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, Button,TextInput, KeyboardAvoidingView } from 'react-native';
-import logo from '../images/tt_logo.png';
+import { BleManager } from 'react-native-ble-plx';
+import base64 from 'react-native-base64';
+
 export default class BluetoothPage extends React.Component {
+    constructor() {
+        super()
+        this.manager = new BleManager()
+        this.state = {inputString: ''};
+    }
+
+    encode = () =>{
+        const Buffer = require("buffer").Buffer;
+        var encode = new Buffer(this.state.inputString).toString("base64");
+    }
+    
+    componentWillMount() {
+        console.log("Mounted")
+        const subscription = this.manager.onStateChange((state) => {
+            if (state === 'PoweredOn') {
+                this.scanAndConnect();
+                subscription.remove();
+            }
+        }, true);
+    }
+    scanAndConnect() {
+        this.manager.startDeviceScan(null, null, (error, device) => {
+          console.log("Scanning...");
+          console.log(device);
+    
+          if (error) {
+            console.log(error.message);
+            return;
+          }
+
+          
+    
+          if (device.name ===  'TT_arduino') {
+            console.log("Connecting to LED Board");
+            this.manager.stopDeviceScan();
+    
+            device.connect()
+              .then((device) => {
+                console.log("Discovering services and characteristics");
+                return device.discoverAllServicesAndCharacteristics()
+              })
+              .then((device) => {
+                console.log(device.id);
+                device.writeCharacteristicWithResponseForService('12ab', '34cd', encodedName)
+                  .then((characteristic) => {
+                    console.log(characteristic.value);
+                    return 
+                  })
+              })
+              .catch((error) => {
+                console.log('Error in Writing Data');
+                console.log(error.message);
+              })
+           }
+       })
+    }
+
     render(){
         return(
             <KeyboardAvoidingView
@@ -23,8 +82,9 @@ export default class BluetoothPage extends React.Component {
                     <Button color = 'gray' title = "Clear board" />
                 </View>
                 <View style = {styles.changeButton}>
-                    <Button color = 'gray' title = "Change display" />
+                    <Button color = 'gray' title = "Change display" onPress = {inputString => this.setState({inputString})}/>
                 </View>
+                <Button title = "check" onPress = {this.encode} />
                 
             </View>
             </KeyboardAvoidingView>
