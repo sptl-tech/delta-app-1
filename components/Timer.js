@@ -28,8 +28,8 @@ export default class Timer extends React.Component {
              <Button onPress = {this.incrementHours} color = "red" title = "Click me" />
             </KeyboardAvoidingView>
         ) 
-    
-}}
+    }
+}
 
 const styles = StyleSheet.create({
     container: {
