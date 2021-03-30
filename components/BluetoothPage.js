@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, Button,TextInput, KeyboardAvoidingView } from 'react-native';
-import logo from '../images/tt_logo.png';
 export default class BluetoothPage extends React.Component {
     render(){
         return(
