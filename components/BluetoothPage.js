@@ -7,12 +7,15 @@ export default class BluetoothPage extends React.Component {
     constructor() {
         super()
         this.manager = new BleManager()
-        this.state = {inputString: ''};
+        this.state = {inputString: " "}; //set initial state to an empty string
+
+        this.handleUserInput = this.handleUserInput.bind(this)
     }
 
-    encode = () =>{
-        const Buffer = require("buffer").Buffer;
-        var encode = new Buffer(this.state.inputString).toString("base64");
+    handleUserInput(newInput){ //function to update the state after user input
+        this.setState({
+            inputString: newInput
+        })
     }
     
     componentWillMount() {
@@ -28,7 +31,8 @@ export default class BluetoothPage extends React.Component {
         this.manager.startDeviceScan(null, null, (error, device) => {
           console.log("Scanning...");
           console.log(device);
-    
+          const base64Data = base64.encode(this.state.inputString);
+          console.log(base64Data);
           if (error) {
             console.log(error.message);
             return;
@@ -36,7 +40,7 @@ export default class BluetoothPage extends React.Component {
 
           
     
-          if (device.name ===  'TT_arduino') {
+          if (device.name ===  "Sahil's iPhone") {
             console.log("Connecting to LED Board");
             this.manager.stopDeviceScan();
     
@@ -47,7 +51,9 @@ export default class BluetoothPage extends React.Component {
               })
               .then((device) => {
                 console.log(device.id);
-                device.writeCharacteristicWithResponseForService('12ab', '34cd', encodedName)
+                
+                
+                device.writeCharacteristicWithResponseForService('12ab', '34cd', base64Data)
                   .then((characteristic) => {
                     console.log(characteristic.value);
                     return 
@@ -66,25 +72,33 @@ export default class BluetoothPage extends React.Component {
             <KeyboardAvoidingView
              style={styles.container}
              behavior = "padding">
+                 
+                <Text color = "white"> {/*Text comp just to see if the state is being updated */}
+                    Typing: {this.state.inputString}
+                </Text>
                 <Text style = {styles.base}>
                     Enter a word:
                 </Text>
+
+                {/* Logic to have a input for users and onChange text will update the state by calling the handleUserInput function */}
                 <TextInput 
                     style ={styles.input}
                     placeholder = 'e.g. Hello'
                     placeholderTextColor = 'white'
+                    defaultValue = {this.state.inputString}
+                    onChangeText = {this.handleUserInput}
                 />
                 <Text>{'\n'}</Text>
-
+                
   
             <View style={styles.buttons}>
                 <View style = {styles.clearButton}>
                     <Button color = 'gray' title = "Clear board" />
                 </View>
                 <View style = {styles.changeButton}>
-                    <Button color = 'gray' title = "Change display" onPress = {inputString => this.setState({inputString})}/>
+                    <Button color = 'gray' title = "Change display" /> 
                 </View>
-                <Button title = "check" onPress = {this.encode} />
+                <Button title = "check" onPress = {console.log(this.base64Data)} />{/*Test to see if string is convertedt to base64 -> will be removed in final productiong */}
                 
             </View>
             </KeyboardAvoidingView>
