@@ -27,6 +27,7 @@ export default class BluetoothPage extends React.Component {
             }
         }, true);
     }
+
     scanAndConnect() {
         this.manager.startDeviceScan(null, null, (error, device) => {
           console.log("Scanning...");
@@ -40,7 +41,7 @@ export default class BluetoothPage extends React.Component {
 
           
     
-          if (device.name ===  "Sahil's iPhone") {
+          if (device.name ===  "TTSign") {
             console.log("Connecting to LED Board");
             this.manager.stopDeviceScan();
     
@@ -53,8 +54,8 @@ export default class BluetoothPage extends React.Component {
                 console.log(device.id);
                 
                 
-                device.writeCharacteristicWithResponseForService('12ab', '34cd', base64Data)
-                  .then((characteristic) => {
+                device.writeCharacteristicWithResponseForService('00001101-0000-1000-8000-00805F9B34FB', 'UUIDcharc', base64Data)
+                  .then((characteristic) => { 
                     console.log(characteristic.value);
                     return 
                   })
@@ -65,7 +66,8 @@ export default class BluetoothPage extends React.Component {
               })
            }
        })
-    }
+       
+        }
 
     render(){
         return(
