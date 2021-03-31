@@ -23,14 +23,16 @@ To be able to pull the latest updates from the main project repository into your
 2. Download [Node.js](https://nodejs.org/en/download/). Check your installation by typing `node -v` and `npm -v` in your terminal.
 3. Install the base npm package in the root directory of your local delta-app repository by running `npm install` in your terminal.
 4. Install Expo CLI with the command `npm install -g expo-cli` in the same directory.
-5. Run `expo start` to test that Expo CLI is building properly.
+5. Install React Navigation with the command `npm install @react-navigation/native` to install the React Navigation Dependency.
+6. Run `expo start` to test that Expo CLI is building properly.
 
 ### macOS
 1. Open your terminal. Verify that you are in the root directory of your local project repository of delta-app. Use `cd YOUR_DELTA_APP_DIRECTORY` if you are not.
 2. Download [Node.js](https://nodejs.org/en/download/). Check your installation by typing `node -v` and `npm -v` in your terminal.
 3. Install the base npm package in the root directory of your local delta-app repository by running `npm install` in your terminal.
 4. Install Expo CLI with the command `npm install -g expo-cli` in the same directory.
-5. Run `expo start` to test that Expo CLI is building properly.
+5. Install React Navigation with the command `npm install @react-navigation/native` to install the React Navigation Dependency.
+6. Run `expo start` to test that Expo CLI is building properly.
 
 ### Ubuntu, Ubuntu-based distros, or WSL-Ubuntu
 1. Open your terminal.
@@ -42,7 +44,8 @@ Restart your terminal, then run `nvm install` which will install the latest Node
 4. Verify that you are in the root directory of your local project repository of delta-app. Use `cd YOUR_DELTA_APP_DIRECTORY` if you are not.
 5. Install the base npm package in the root directory of your local delta-app repository by running `npm install` in your terminal.
 6. Install Expo CLI with the command `npm install -g expo-cli` in the same directory.
-7. Run `expo start` to test that Expo CLI is building properly.
+7. Install React Navigation with the command `npm install @react-navigation/native` to install the React Navigation Dependency.
+8. Run `expo start` to test that Expo CLI is building properly.
 
 ## iOS & Android Testing
 1. Download "Expo Go" from the App Store or Play Store

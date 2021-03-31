@@ -1,19 +1,16 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Button, TouchableOpacity } from 'react-native';
-import logo from '../images/tt_logo.png';
+import { StyleSheet, Text, View, Image, Button } from 'react-native';
 import Header from './layout/Header'
 
-export default function Home ({navigation}) {
+export default function NavScreen ({navigation}) {
 
         return(
             <View style={styles.container}>
-                <Text>{'\n'}</Text>
-                <Text>{'\n'}</Text>
-                <Text style={styles.TTLED}>Nav Screen</Text>
-                <Text>{'\n'}</Text>
-                <Button color = "#8B0000" title = "Bluetooth" onPress = {() => navigation.navigate('Bluetooth')}/>
-                <Text>{'\n'}</Text>
-                <Button color = "#8B0000" title = "Timer" onPress = {() => navigation.navigate('Timer')}/>
+            <View style={{ borderBottomColor: '#FFFFFF', borderBottomWidth: 2, width: '100%' }} />
+            <Button color = "red" title = "LED Display" onPress = {() => navigation.navigate('Bluetooth')}/>
+            <View style={{ borderBottomColor: '#FFFFFF', borderBottomWidth: 2, width: '100%' }} />
+            <Button color = "red" title = "Timer" onPress = {() => navigation.navigate('Timer')}/>
+            <View style={{ borderBottomColor: '#FFFFFF', borderBottomWidth: 2, width: '100%' }} />
             </View>
         )
 }
@@ -26,9 +23,5 @@ const styles = StyleSheet.create({
       justifyContent: 'flex-start',
       padding: 10,
     },
-    TTLED: {
-        color: "white",
-        fontSize: 70,
-        fontFamily: "Times New Roman",
-    },
+
 });
