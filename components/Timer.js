@@ -72,8 +72,8 @@ export default class Timer extends React.Component {
             </TouchableOpacity>
             </KeyboardAvoidingView>
         ) 
-    
-}}
+    }
+}
 
 const styles = StyleSheet.create({
     roundButton1: {
