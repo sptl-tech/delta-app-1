@@ -75,6 +75,47 @@ export default class Timer extends React.Component {
                     </TouchableOpacity>
                 </View>
                  
+
+            <KeyboardAvoidingView
+             style={styles.rowContainer}
+             behavior = "padding">
+            
+            <View style={styles.timeAndButtonContainer}> 
+            <View style={styles.spaceTimeEvenly}>
+
+             <View style = {styles.timeUnit}>
+             <Button onPress = {this.decrementHours} color = "red" title = "-" />
+             <Text style = {styles.numberText}> {this.state.Hours} Hour</Text>
+             <Button onPress = {this.incrementHours} color = "red" title = "+" />
+             </View>
+
+             <View style = {styles.timeUnit}>
+             <Button onPress = {this.decrementMinutes} color = "red" title = "-" />
+             <Text style = {styles.numberText}> {this.state.Minutes} Min</Text>
+             <Button onPress = {this.incrementMinutes} color = "red" title = "+" />
+             </View>
+
+             <View style = {styles.timeUnit}>
+             <Button onPress = {this.decrementSeconds} color = "red" title = "-" />
+             <Text style = {styles.numberText}> {this.state.Seconds} Sec</Text>
+             <Button onPress = {this.incrementSeconds} color = "red" title = "+" fontWeight = "bold" />
+             </View>
+
+             </View>
+
+            <View style={styles.spaceEvenlyContainer}>
+
+                <TouchableOpacity style={styles.roundButton1}>
+                <Text>STOP</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.roundButton2}>
+                <Text>START</Text>
+                </TouchableOpacity>
+            </View>
+
+            </View>
+
             </KeyboardAvoidingView>
         ) 
     }
@@ -108,6 +149,18 @@ const styles = StyleSheet.create({
         color: "white",
         margin: 3,
         fontSize: 20
+
+    numberText: {
+     color: "white",
+     marginRight: 3,
+     fontSize: 20,
+    },
+    timeAndButtonContainer: {
+        flex: 2,
+        flexWrap: 'wrap',
+        flexDirection: 'column',
+        justifyContent: 'space-around',
+        marginTop: '20%',
     },
     buttonContainer: {
         flex: 1,
@@ -115,6 +168,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'black',
         justifyContent: 'space-evenly',
     },
+
     timerElements: {
         flexDirection: 'row',
         justifyContent: 'center',
@@ -122,4 +176,23 @@ const styles = StyleSheet.create({
         marginTop: 300, 
         marginBottom: 50,
     }
+    spaceEvenlyContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        width: '100%',
+    },
+    timeUnit: {
+        flexWrap: "wrap",
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        //marginTop: 10,
+        marginRight: 10,
+        marginBottom: 10,
+    },
+    spaceTimeEvenly: {
+        flexWrap: "wrap",
+        flex: 1,
+        flexDirection: 'column'
+    },
 });

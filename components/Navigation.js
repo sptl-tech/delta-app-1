@@ -20,12 +20,8 @@ const styles = StyleSheet.create({
       flex: 1,
       backgroundColor: '#303030',
       alignItems: 'center',
-      justifyContent: 'center',
-    },
-    image: {
-        width: 200,
-        height: 200,
-        resizeMode: 'contain',
+      justifyContent: 'flex-start',
+      padding: 10,
     },
 
 });
