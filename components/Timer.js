@@ -52,6 +52,30 @@ export default class Timer extends React.Component {
     }
     render(){
         return(
+            <KeyboardAvoidingView 
+            style={styles.container} 
+            behavior = "padding">
+                <View style={styles.timerElements}>
+                    <Button onPress = {this.decrementHours} color = "red" title = "-" />
+                    <Text style = {styles.text}> {this.state.Hours} Hour</Text>
+                    <Button onPress = {this.incrementHours} color = "red" title = "+" />
+                    <Button onPress = {this.decrementMinutes} color = "red" title = "-" />
+                    <Text style = {styles.text}> {this.state.Minutes} Min</Text>
+                    <Button onPress = {this.incrementMinutes} color = "red" title = "+" />
+                    <Button onPress = {this.decrementSeconds} color = "red" title = "-" />
+                    <Text style = {styles.text}> {this.state.Seconds} Sec</Text>
+                    <Button onPress = {this.incrementSeconds} color = "red" title = "+"/>
+                </View>
+                <View style={styles.buttonContainer}>
+                    <TouchableOpacity style={styles.stopButton}>
+                        <Text style = {styles.text}>STOP</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.startButton}>
+                        <Text style = {styles.text}>START</Text>
+                    </TouchableOpacity>
+                </View>
+                 
+
             <KeyboardAvoidingView
              style={styles.rowContainer}
              behavior = "padding">
@@ -98,32 +122,34 @@ export default class Timer extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    roundButton1: {
-    width: 100,
-    height: 100,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 10,
-    borderRadius: 100,
-    backgroundColor: 'red',
+    stopButton: {
+        width: 100,
+        height: 100,
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 10,
+        borderRadius: 100,
+        backgroundColor: 'red',
   },
-  roundButton2: {
-    width: 100,
-    height: 100,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 10,
-    borderRadius: 100,
-    backgroundColor: 'green',
-  },
-    rowContainer: {
-      flexWrap: "wrap",
-      flexDirection: "row",
-      flex: 1,
-      backgroundColor: '#000000',
-      alignItems: 'center',
-      justifyContent: 'center',
+    startButton: {
+        width: 100,
+        height: 100,
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 10,
+        borderRadius: 100,
+        backgroundColor: 'green',
     },
+    container: {
+        flex: 1,
+        flexDirection: "column",
+        backgroundColor: '#000000',
+    },
+    text: {
+        color: "white",
+        margin: 3,
+        fontSize: 20
+
     numberText: {
      color: "white",
      marginRight: 3,
@@ -136,12 +162,20 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         marginTop: '20%',
     },
-    buttons: {
-        flex: 2,
+    buttonContainer: {
+        flex: 1,
         flexDirection:'row',
         backgroundColor: 'black',
-        justifyContent: 'space-between',
+        justifyContent: 'space-evenly',
     },
+
+    timerElements: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        padding: 45,
+        marginTop: 300, 
+        marginBottom: 50,
+    }
     spaceEvenlyContainer: {
         flex: 1,
         flexDirection: 'row',
