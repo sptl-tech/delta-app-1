@@ -75,7 +75,7 @@ export default class Timer extends React.Component {
                     </TouchableOpacity>
                 </View>
                  
-
+            
             <KeyboardAvoidingView
              style={styles.rowContainer}
              behavior = "padding">
@@ -117,6 +117,7 @@ export default class Timer extends React.Component {
             </View>
 
             </KeyboardAvoidingView>
+            </KeyboardAvoidingView>
         ) 
     }
 }
@@ -149,7 +150,7 @@ const styles = StyleSheet.create({
         color: "white",
         margin: 3,
         fontSize: 20
-
+    },
     numberText: {
      color: "white",
      marginRight: 3,
@@ -175,7 +176,7 @@ const styles = StyleSheet.create({
         padding: 45,
         marginTop: 300, 
         marginBottom: 50,
-    }
+    },
     spaceEvenlyContainer: {
         flex: 1,
         flexDirection: 'row',
