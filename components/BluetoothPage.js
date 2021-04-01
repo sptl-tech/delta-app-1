@@ -1,8 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, Button,TextInput, KeyboardAvoidingView } from 'react-native';
-import { BleManager } from 'react-native-ble-plx';
-import base64 from 'react-native-base64';
-
 export default class BluetoothPage extends React.Component {
     constructor() {
         super()
