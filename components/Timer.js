@@ -4,27 +4,19 @@ export default class Timer extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-        Hours : 0, 
         Minutes : 0,
         Seconds: 0   }
-        this.decrementHours = this.decrementHours.bind(this);
         this.decrementMinutes = this.decrementMinutes.bind(this);
         this.decrementSeconds = this.decrementSeconds.bind(this);
-        this.incrementHours = this.incrementHours.bind(this);
         this.incrementMinutes = this.incrementMinutes.bind(this);
         this.incrementSeconds = this.incrementSeconds.bind(this);
     }
-    decrementHours(){
-        if(this.state.Hours>0)
-        this.setState({Hours: this.state.Hours -1});
-        if(this.state.Hours ==0)
-        this.setState({Hours: 24})
-    }
+   
     decrementMinutes(){
         if(this.state.Minutes>0)
         this.setState({Minutes: this.state.Minutes -1});
         if(this.state.Minutes ==0)
-        this.setState({Minutes: 59})
+        this.setState({Minutes: 99})
     }
     decrementSeconds(){
          if(this.state.Seconds>0)
@@ -32,16 +24,10 @@ export default class Timer extends React.Component {
         if(this.state.Seconds ==0)
         this.setState({Seconds: 59})
     }
-    incrementHours(){
-        if(this.state.Hours < 24)
-        this.setState({Hours: this.state.Hours +1});
-        if(this.state.Hours ==24)
-        this.setState({Hours: 0});
-    }
     incrementMinutes(){
-        if(this.state.Minutes < 59)
+        if(this.state.Minutes < 99)
         this.setState({Minutes: this.state.Minutes +1});
-        if(this.state.Minutes == 59)
+        if(this.state.Minutes == 99)
         this.setState({Minutes: 0});
     }
     incrementSeconds(){
@@ -56,9 +42,6 @@ export default class Timer extends React.Component {
             style={styles.container} 
             behavior = "padding">
                 <View style={styles.timerElements}>
-                    <Button onPress = {this.decrementHours} color = "red" title = "-" />
-                    <Text style = {styles.text}> {this.state.Hours} Hour</Text>
-                    <Button onPress = {this.incrementHours} color = "red" title = "+" />
                     <Button onPress = {this.decrementMinutes} color = "red" title = "-" />
                     <Text style = {styles.text}> {this.state.Minutes} Min</Text>
                     <Button onPress = {this.incrementMinutes} color = "red" title = "+" />
@@ -75,7 +58,7 @@ export default class Timer extends React.Component {
                     </TouchableOpacity>
                 </View>
                  
-
+            
             <KeyboardAvoidingView
              style={styles.rowContainer}
              behavior = "padding">
@@ -84,9 +67,6 @@ export default class Timer extends React.Component {
             <View style={styles.spaceTimeEvenly}>
 
              <View style = {styles.timeUnit}>
-             <Button onPress = {this.decrementHours} color = "red" title = "-" />
-             <Text style = {styles.numberText}> {this.state.Hours} Hour</Text>
-             <Button onPress = {this.incrementHours} color = "red" title = "+" />
              </View>
 
              <View style = {styles.timeUnit}>
@@ -116,6 +96,7 @@ export default class Timer extends React.Component {
 
             </View>
 
+            </KeyboardAvoidingView>
             </KeyboardAvoidingView>
         ) 
     }
@@ -149,7 +130,7 @@ const styles = StyleSheet.create({
         color: "white",
         margin: 3,
         fontSize: 20
-
+    },
     numberText: {
      color: "white",
      marginRight: 3,
@@ -175,7 +156,7 @@ const styles = StyleSheet.create({
         padding: 45,
         marginTop: 300, 
         marginBottom: 50,
-    }
+    },
     spaceEvenlyContainer: {
         flex: 1,
         flexDirection: 'row',
