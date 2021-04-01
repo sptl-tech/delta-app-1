@@ -18,6 +18,12 @@ export default class BluetoothPage extends React.Component {
         })
     }
     
+    clearBoard = () =>{
+        this.setState({
+            inputString: " "
+        })
+    }
+
     componentWillMount() {
         console.log("Mounted")
         const subscription = this.manager.onStateChange((state) => {
@@ -32,14 +38,10 @@ export default class BluetoothPage extends React.Component {
         this.manager.startDeviceScan(null, null, (error, device) => {
           console.log("Scanning...");
           console.log(device);
-          const base64Data = base64.encode(this.state.inputString);
-          console.log(base64Data);
           if (error) {
             console.log(error.message);
             return;
           }
-
-          
     
           if (device.name ===  "TTSign") {
             console.log("Connecting to LED Board");
@@ -52,7 +54,8 @@ export default class BluetoothPage extends React.Component {
               })
               .then((device) => {
                 console.log(device.id);
-                
+
+                const base64Data = base64.encode(this.state.inputString); //encode the updated input with base64 
                 
                 device.writeCharacteristicWithResponseForService('00001101-0000-1000-8000-00805F9B34FB', 'UUIDcharc', base64Data)
                   .then((characteristic) => { 
@@ -95,7 +98,7 @@ export default class BluetoothPage extends React.Component {
   
             <View style={styles.buttons}>
                 <View style = {styles.clearButton}>
-                    <Button color = 'gray' title = "Clear board" />
+                    <Button color = 'gray' title = "Clear board" onPress = {this.clearBoard}/>
                 </View>
                 <View style = {styles.changeButton}>
                     <Button color = 'gray' title = "Change display" /> 
