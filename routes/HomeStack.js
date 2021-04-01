@@ -41,7 +41,7 @@ export default function HomeStack (){
             }}/>
             <Stack.Screen name = "Bluetooth" component={Bluetooth} 
             options = {{
-                title: 'Bluetooth',
+                title: 'LED Display',
                 headerStyle: {
                     backgroundColor: '#303030'
                 },
