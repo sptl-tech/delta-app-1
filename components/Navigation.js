@@ -6,7 +6,6 @@ import Header from './layout/Header'
 export default function Home ({navigation}) {
 
         return(
-            
             <View style={styles.container}>
                 <Image style={styles.image} source = {logo} />
             <View style={{ borderBottomColor: '#FFFFFF', borderBottomWidth: 2, width: '100%' }} />
