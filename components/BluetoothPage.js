@@ -33,7 +33,6 @@ export default class BluetoothPage extends React.Component {
         this.setState({
             inputString: " "
         })
-        
     }
 
     componentWillMount() {
