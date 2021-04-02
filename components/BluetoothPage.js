@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Button,TextInput, KeyboardAvoidingView } from 'react-native';
+import { StyleSheet, Text, View, Image, Button,TextInput, KeyboardAvoidingView, Alert } from 'react-native';
 import { BleManager } from 'react-native-ble-plx';
 import base64 from 'react-native-base64';
 
@@ -7,21 +7,33 @@ export default class BluetoothPage extends React.Component {
     constructor() {
         super()
         this.manager = new BleManager()
-        this.state = {inputString: " "}; //set initial state to an empty string
-
+        this.state = {
+            inputString: "",
+            base64Data: "",
+    
+    }; //set initial state to an empty string
+    
         this.handleUserInput = this.handleUserInput.bind(this)
     }
 
-    handleUserInput(newInput){ //function to update the state after user input
-        this.setState({
-            inputString: newInput
+    handleUserInput(input){ //function to update the state after user input
+       this.setState({
+            inputString: input, 
         })
+        console.log(input);
+    }
+
+    handleConfirm = () => {
+        const {inputString} = this.state;
+        const base64Data = base64.encode(this.state.inputString); //encode the input string
+        Alert.alert(inputString + " String will be encoded as \n" + base64Data + " and will be sent to the LED board");
     }
     
     clearBoard = () =>{
         this.setState({
             inputString: " "
         })
+        
     }
 
     componentWillMount() {
@@ -37,6 +49,7 @@ export default class BluetoothPage extends React.Component {
     scanAndConnect() {
         this.manager.startDeviceScan(null, null, (error, device) => {
           console.log("Scanning...");
+          
           console.log(device);
           if (error) {
             console.log(error.message);
@@ -54,10 +67,8 @@ export default class BluetoothPage extends React.Component {
               })
               .then((device) => {
                 console.log(device.id);
-
-                const base64Data = base64.encode(this.state.inputString); //encode the updated input with base64 
-                
-                device.writeCharacteristicWithResponseForService('00001101-0000-1000-8000-00805F9B34FB', 'UUIDcharc', base64Data)
+                                
+                device.writeCharacteristicWithResponseForService('00001101-0000-1000-8000-00805F9B34FB', 'UUIDcharc', base64Data) 
                   .then((characteristic) => { 
                     console.log(characteristic.value);
                     return 
@@ -77,10 +88,7 @@ export default class BluetoothPage extends React.Component {
             <KeyboardAvoidingView
              style={styles.container}
              behavior = "padding">
-                 
-                <Text color = "white"> {/*Text comp just to see if the state is being updated */}
-                    Typing: {this.state.inputString}
-                </Text>
+                
                 <Text style = {styles.base}>
                     Enter a word:
                 </Text>
@@ -90,9 +98,11 @@ export default class BluetoothPage extends React.Component {
                     style ={styles.input}
                     placeholder = 'e.g. Hello'
                     placeholderTextColor = 'white'
-                    defaultValue = {this.state.inputString}
-                    onChangeText = {this.handleUserInput}
+                    id = 'inputString'
+                    value = {this.state.inputString}
+                    onChangeText = {(inputString => this.handleUserInput(inputString))}
                 />
+                
                 <Text>{'\n'}</Text>
                 
   
@@ -101,9 +111,8 @@ export default class BluetoothPage extends React.Component {
                     <Button color = 'gray' title = "Clear board" onPress = {this.clearBoard}/>
                 </View>
                 <View style = {styles.changeButton}>
-                    <Button color = 'gray' title = "Change display" /> 
+                    <Button color = 'gray' title = "Change display" onPress={this.handleConfirm}/> 
                 </View>
-                <Button title = "check" onPress = {console.log(this.base64Data)} />{/*Test to see if string is convertedt to base64 -> will be removed in final productiong */}
                 
             </View>
             </KeyboardAvoidingView>
