@@ -5,7 +5,9 @@ export default class Timer extends React.Component {
         super(props);
         this.state = {
         Minutes : 0,
-        Seconds: 0   }
+        Seconds: 0,
+        
+    }
         this.decrementMinutes = this.decrementMinutes.bind(this);
         this.decrementSeconds = this.decrementSeconds.bind(this);
         this.incrementMinutes = this.incrementMinutes.bind(this);
@@ -36,6 +38,7 @@ export default class Timer extends React.Component {
         if(this.state.Seconds == 59)
         this.setState({Seconds: 0});
     }
+
     render(){
         return(
             <KeyboardAvoidingView 
