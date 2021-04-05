@@ -15,7 +15,7 @@ export default function Home ({navigation}) {
             <Text style={styles.TTLED}>TT LED</Text>
             <Text style={styles.openMotto}>"Whatsoever thy hand findeth to do, do it with thy might;..."--Ecclesiastes 9:10</Text>
             <Text>{'\n'}</Text>
-            <Button color = "red" title = "Get Started" onPress = {() => navigation.navigate('NavScreen')}/>
+            <Button color = "#8B0000" title = "Get Started" onPress = {() => navigation.navigate('NavScreen')}/>
             </View>
         )
 }

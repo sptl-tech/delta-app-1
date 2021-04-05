@@ -14,9 +14,9 @@ export default function Header() {
     <View style = {styles.header}>
       <MaterialIcons name = 'menu' size = {28} onPress = {openMenu} style = {styles.icon} />
     
-    <View>
-       <Text style = {styles.headerText}>TT Led</Text>
-    </View>
+      <View>
+        <Text style = {styles.headerText}>TT Led</Text>
+      </View>
     </View>
     
     
